@@ -1,4 +1,4 @@
-package android.test.tinkoff;
+package android.test.tinkoff.Activities;
 
 import android.support.v4.widget.SwipeRefreshLayout;
 import android.support.v7.app.AppCompatActivity;
@@ -6,7 +6,10 @@ import android.os.Bundle;
 import android.support.v7.widget.DividerItemDecoration;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
+import android.test.tinkoff.Adapters.NewsAdapter;
+import android.test.tinkoff.Helpers.NewsEntry;
+import android.test.tinkoff.R;
+import android.test.tinkoff.Helpers.RequestQueueSingleton;
 import android.view.View;
 import android.widget.TextView;
 

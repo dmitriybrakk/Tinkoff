@@ -1,11 +1,14 @@
-package android.test.tinkoff;
+package android.test.tinkoff.Adapters;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Build;
 import android.support.v7.widget.RecyclerView;
+import android.test.tinkoff.Activities.NewsContentActivity;
+import android.test.tinkoff.Helpers.NewsEntry;
+import android.test.tinkoff.R;
+import android.test.tinkoff.Helpers.RequestQueueSingleton;
 import android.text.Html;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,13 +18,9 @@ import android.widget.Toast;
 import com.android.volley.Request;
 import com.android.volley.Response;
 import com.android.volley.VolleyError;
-import com.android.volley.toolbox.JsonObjectRequest;
 import com.android.volley.toolbox.StringRequest;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-
-import org.json.JSONException;
-import org.json.JSONObject;
 
 import java.util.List;
 
@@ -65,7 +64,7 @@ public class NewsAdapter extends RecyclerView.Adapter<NewsAdapter.NewsViewHolder
                         JsonParser parser = new JsonParser();
                         JsonObject payload = parser.parse(response).getAsJsonObject().get("payload").getAsJsonObject();
                         String content = payload.get("content").getAsString();
-                        Intent intent = new Intent(mContext,NewsContent.class);
+                        Intent intent = new Intent(mContext,NewsContentActivity.class);
                         intent.putExtra("content",content);
                         mContext.startActivity(intent);
                     }

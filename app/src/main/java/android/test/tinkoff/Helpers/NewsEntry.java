@@ -1,8 +1,7 @@
-package android.test.tinkoff;
+package android.test.tinkoff.Helpers;
 
 import android.os.Build;
 
-import java.io.Serializable;
 import java.util.Comparator;
 
 /**
